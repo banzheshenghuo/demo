@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>动态引入link标签</title>
+    <style>
+      .font-color {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="font-color">我只是一个颜色字体</p>
+    <button>修改主题为蓝色</button>
+    <script>
+      var btn = document.querySelector("button");
+
+      btn.onclick = function () {
+        // 动态插入 外链link 标签
+        // var linkTag = `<link rel="stylesheet" type="text/css" href="./blue.css" />`;
+        var linkTag = document.createElement("link");
+        linkTag.setAttribute("rel", "stylesheet");
+        linkTag.setAttribute("type", "text/css");
+        linkTag.setAttribute("href", "./blue.css");
+
+        document.head.appendChild(linkTag);
+      };
+    </script>
+  </body>
+</html>

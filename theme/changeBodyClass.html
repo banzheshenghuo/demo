@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>修改body class</title>
+    <style>
+      .font-color {
+        color: red;
+      }
+      .blue .font-color {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="font-color">我只是一个颜色字体</p>
+    <button>修改主题为蓝色</button>
+    <script>
+      var btn = document.querySelector("button");
+
+      btn.onclick = function () {
+        document.body.setAttribute("class", "blue");
+      };
+    </script>
+  </body>
+</html>
